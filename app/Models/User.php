@@ -12,4 +12,10 @@ class User extends Model
     protected array $fields = [
         'email', 'name', 'password'
     ];
+
+    protected $validationRules = [
+        'email' => ['email'],
+        'name' => [],
+        'password' => ['min:5', 'max:50'],
+    ];
 }

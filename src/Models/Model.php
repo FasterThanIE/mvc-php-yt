@@ -12,7 +12,7 @@ class Model extends MySQL
     protected string $table = '';
     protected array $fields = [];
 
-    public function create(array $fields): void
+    public function create(array $fields, bool $useValidationRules = false): void
     {
 
         if(!$this->checkFillableFields(fields: array_keys($fields), fillableFields: $this->fields)) {
