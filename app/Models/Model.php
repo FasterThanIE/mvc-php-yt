@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
-class Model
+use Src\Db\MySQL;
+
+class Model extends MySQL
 {
 
 }
