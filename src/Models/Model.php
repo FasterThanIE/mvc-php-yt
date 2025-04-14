@@ -15,7 +15,7 @@ class Model extends MySQL
     public function create(array $fields, bool $useValidationRules = false): void
     {
 
-        if(!$this->checkFillableFields(fields: array_keys($fields), fillableFields: $this->fields)) {
+        if (!$this->checkFillableFields(fields: array_keys($fields), fillableFields: $this->fields)) {
             throw new \Exception(message: "This field is not fillable.");
         }
 
@@ -23,7 +23,7 @@ class Model extends MySQL
 
         $questionMarks = array_fill(start_index: 0, count: count($fields), value: '?');
 
-        $query = "INSERT INTO ".$this->table." (".$strFields.") VALUES (".implode(separator: ',', array: $questionMarks).")";
+        $query = "INSERT INTO " . $this->table . " (" . $strFields . ") VALUES (" . implode(separator: ',', array: $questionMarks) . ")";
         $stmt = $this->pdo->prepare(query: $query);
 
         $stmt->execute(params: array_values($fields));

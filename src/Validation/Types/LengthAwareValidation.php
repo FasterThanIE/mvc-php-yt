@@ -13,13 +13,13 @@ class LengthAwareValidation extends RuleValidator implements CoreValidatorInterf
     public function validate(mixed $value, string $rule = null): bool
     {
 
-        if(!$this->isValidRule(rule: $rule)) {
+        if (!$this->isValidRule(rule: $rule)) {
             return false;
         }
 
         list($ruleType, $ruleLength) = explode(separator: ':', string: $rule);
 
-        if(!is_numeric(value: $ruleLength) || $ruleLength < 1) {
+        if (!is_numeric(value: $ruleLength) || $ruleLength < 1) {
             return false;
         }
 

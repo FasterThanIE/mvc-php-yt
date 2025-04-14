@@ -6,9 +6,10 @@ trait CheckFillableFields
 {
     protected function checkFillableFields(
         array $fields, array $fillableFields
-    ): bool {
+    ): bool
+    {
         foreach ($fields as $field) {
-            if(!in_array($field, $fillableFields)) {
+            if (!in_array($field, $fillableFields)) {
                 return false;
             }
         }
