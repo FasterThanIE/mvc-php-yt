@@ -1,0 +1,6 @@
+
+Kada budemo imali veliki broj ruta, mora da se odradi cela logika provere rute
+
+cache system
+ILI
+redis
